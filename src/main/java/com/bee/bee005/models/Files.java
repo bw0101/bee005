@@ -10,14 +10,12 @@ import lombok.RequiredArgsConstructor;
 @Entity
 @Table(name="File")
 @RequiredArgsConstructor
-public class Bee {
-
+public class Files {
     @Id
     private Long id;
-
     private String version;
     private String path;
     private String type;
     private String description;
-
 }
+

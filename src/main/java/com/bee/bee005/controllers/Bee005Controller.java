@@ -1,7 +1,9 @@
 package com.bee.bee005.controllers;
 
 import com.bee.bee005.models.Bee;
+import com.bee.bee005.models.Files;
 import com.bee.bee005.repositories.BeeRepository;
+import com.bee.bee005.repositories.FilesRepository;
 import com.bee.bee005.services.Bee005Service;
 import com.bee.bee005.services.BeeService;
 import lombok.AllArgsConstructor;
@@ -20,6 +22,8 @@ public class Bee005Controller {
     private BeeService beeService;
 
     private BeeRepository repo;
+
+    private FilesRepository filesRepo;
 
     @GetMapping("/hi")
     public String sayHi() {
@@ -49,11 +53,16 @@ public class Bee005Controller {
     public Iterable<Bee> list() {
         return beeService.list();
     }
+
     @GetMapping(value = "/bee2")
     public Iterable<Bee> bee2() {
         return repo.findAll();
     }
 
+    @GetMapping(value = "/files")
+    public Iterable<Files> files() {
+        return filesRepo.findAll();
+    }
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(IllegalArgumentException.class)
