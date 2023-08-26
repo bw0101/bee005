@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update File</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/updatefile}" th:object="${file}" method="post">
+    <!-- Hidden ID Field to send the ID for updating -->
+    <input type="hidden" th:field="*{id}"/>
+
+    <div>
+        <label for="version">Version:</label>
+        <input type="text" id="version" th:field="*{version}" required/>
+    </div>
+
+    <div>
+        <label for="path">Path:</label>
+        <input type="text" id="path" th:field="*{path}" required/>
+    </div>
+
+    <div>
+        <label for="type">Type:</label>
+        <input type="text" id="type" th:field="*{type}" required/>
+    </div>
+
+    <div>
+        <label for="description">Description:</label>
+        <textarea id="description" th:field="*{description}"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">Update</button>
+    </div>
+</form>
+
+</body>
+</html>

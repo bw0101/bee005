@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/resources/styles/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/resources/styles/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/resources/styles/styles.css" />
+    <title>File List</title>
+</head>
+<body>
+
+<h2>List files</h2>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Version</th>
+        <th>Path</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <div class="row">
+    <tr th:each="file : ${files}">
+        <td th:text="${file.id}"></td>
+        <td th:text="${file.version}"></td>
+        <td th:text="${file.path}"></td>
+        <td th:text="${file.type}"></td>
+        <td th:text="${file.description}"></td>
+        <td>
+            <!-- Edit Link -->
+            <a th:href="@{/file/edit/{id}(id=${file.id})}">Edit</a>
+            <!-- You can add other actions such as delete here if needed -->
+        </td>
+    </tr>
+        </div>
+    </tbody>
+</table>
+
+</body>
+</html>
