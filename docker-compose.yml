@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: bee
+      POSTGRES_PASSWORD: bee
+      POSTGRES_DB: beedb
+    ports:
+      - "5432:5432"
