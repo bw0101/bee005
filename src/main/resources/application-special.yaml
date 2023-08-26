@@ -1,0 +1,27 @@
+server:
+  address: 127.0.0.1
+  port: 8085
+messages:
+  greetings: 'hi everyone from special!'
+  bye: 'goodbye from special!'
+spring:
+  boot:
+    docker:
+      compose:
+        file: C:/Work/Ide/Git/bee005/docker-compose.yml
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:/bee/testdb/schema.sql
+      data-locations: classpath:/bee/testdb/data.sql
+    jpa:
+      hibernate:
+        ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://0.0.0.0:5432/beedb
+    username: bee
+    password: bee
+appfirst:
+  greeting: "welcome"
+  sourcepath: "C:/Work/Ide/Test/Source/test_001.txt"
+  destinationpath: "/var/tmp/test/destination/test_001_delivered.txt"
