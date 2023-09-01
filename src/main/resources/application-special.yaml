@@ -18,7 +18,7 @@ spring:
       hibernate:
         ddl-auto: none
   datasource:
-    url: jdbc:postgresql://0.0.0.0:5432/beedb
+    url: jdbc:postgresql://0.0.0.0:5433/beedb
     username: bee
     password: bee
 appfirst:

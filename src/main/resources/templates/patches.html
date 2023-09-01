@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Software Patches</title>
+    </head>
+    <body>
+    <h1>Latest Software Patches</h1>
+    <ul>
+        <li th:each="patch : ${patches}">
+            <span th:text="${patch}"></span>
+            <a th:href="@{/patches/download/{patchName}(patchName=${patch})}">Download</a>
+        </li>
+    </ul>
+    </body>
+</html>

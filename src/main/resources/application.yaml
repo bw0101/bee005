@@ -21,3 +21,8 @@ spring:
     url: jdbc:postgresql://0.0.0.0:5432/beedb
     username: bee
     password: bee
+artifactory:
+  url: https://your-artifactory-instance
+  user: username
+  password: password
+  repository: your-repo-name
